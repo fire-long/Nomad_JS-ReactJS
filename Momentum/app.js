@@ -4,7 +4,6 @@
 //'과 " 모두 문자열로 사용 가능하지만, 둘을 교차해서 쓸 수는 없음.
 //console.log("lalalalala");
 
-
 // 두 가지 변수 정의 방법(생성할 때 사용)
 //(1)const는 상수(constant) '
 //(2)let
@@ -54,8 +53,6 @@
 //console.log(toBuy[2]);
 //console.log(toBuy[9898989898]);//undefined
 
-
-
 //console.log("hi");
 //const playerName = "jinaen";
 //const playerPoints = 121212;
@@ -86,7 +83,6 @@
 // player.lastName = "potato";
 // player.points = player.points + 15;
 // console.log(player.points);
-
 
 //functions
 // function sayHello(nameOfPerson, age){
@@ -122,8 +118,8 @@
 //계산기 숙제
 //const calculator = {
 //    add:function(a,b){
-        // console.log(a+b);
-        //alert(a+b);
+// console.log(a+b);
+//alert(a+b);
 //        return a+b;
 //    },
 //    divide:function(a,b){
@@ -194,3 +190,91 @@
 //}
 // || : or
 
+// const title = document.getElementById("title");
+// // console.log(title);
+// title.innerText = "Got you!"//html이 아니라 js에 의해 텍스트가 변화함.
+
+// console.log(title.id);
+// console.log(title.className);
+
+// const hellos = document.getElementsByClassName("hello");
+// console.log(hellos);
+
+// const title = document.getElementsByTagName("h1");
+// console.log(title);
+
+// const title = document.querySelector(".hello h1");
+// const title = document.querySelector(".hello h1:first-child");
+// const title = document.querySelector("#hello");
+// const title = document.getElementById("hello");
+//querySelector : CSS 방식으로 element 검색
+// const title = document.querySelectorAll(".hello h1");
+
+// const title = document.querySelector(".hello h1"); //hello라는 class 내부의 h1를 가져오기
+// const h1 = document.querySelector("div.hello:first-child h1");
+// console.log(title);
+// //element 내부를 보고 싶으면
+// console.dir(title);
+// title.innerText = "Hello";
+
+// title.style.color = "blue";
+// function handleTitleClick() {
+//   const clickedClass = "clicked";
+//   const currentColor = h1.style.color;
+//   let newColor;
+//   console.log("title was clicked!");
+//   console.log(h1.style.color);
+//   if (currentColor === "blue") {
+//     newColor = "tomato";
+//   } else {
+//     newColor = "blue";
+//   }
+//   h1.style.color = newColor;
+//   if (h1.className === clickedClass) {
+//   if (h1.classList.contains(clickedClass)) {
+//     h1.classList.remove(clickedClass);
+//   } else {
+//     h1.classList.add(clickedClass);
+//   }
+//사실 위의 코드는 아래 하나로 다 정리됨
+//   h1.classList.toggle("clicked");
+// }
+
+// function handleMouseEnter() {
+//   h1.innerText = "Mouse is here!";
+// }
+// function handleMouseLeave() {
+//   h1.innerText = "Mouse is gone!";
+// }
+// function handleWindowResize() {
+//   document.body.style.backgroundColor = "tomato";
+// }
+// function handleWindowCopy() {
+//   alert("copier!");
+// }
+// function handleWindowOffline() {
+//   alert("SOS no WIFI");
+// }
+// function handleWindowOnline() {
+//   alert("ALL GOOOD!");
+// }
+//javascript가 대신 함수를 활성화해줄테니까 (), 즉 실행은 지금하지 않음
+// h1.addEventListener("click", handleTitleClick);
+//h1.onclick = handTitleClick;
+// title.addEventListener("mouseenter", handleMouseEnter);
+// h1.onmouseenter = handleMouseEnter;
+//addEventListener를 선호하는 이유 : removeEventListener로 event listener를 제거할 수 있기 때문임.
+// h1.addEventListener("mouseleave", handleMouseLeave);
+
+// window.addEventListener("resize", handleWindowResize);
+// window.addEventListener("copy", handleWindowCopy);
+// window.addEventListener("offline", handleWindowOffline);
+// window.addEventListener("online", handleWindowOnline);
+// const loginForm = document.getElementById("login-form"); //selector면 # 붙여야 함
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
+function onLoginBtnClick() {
+  console.dir(loginInput.value);
+  console.log("click!!!!");
+}
+loginButton.addEventListener("click", onLoginBtnClick);
