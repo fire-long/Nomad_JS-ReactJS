@@ -273,8 +273,34 @@
 // const loginForm = document.getElementById("login-form"); //selector면 # 붙여야 함
 const loginInput = document.querySelector("#login-form input");
 const loginButton = document.querySelector("#login-form button");
-function onLoginBtnClick() {
-  console.dir(loginInput.value);
-  console.log("click!!!!");
+
+const link = document.querySelector("a");
+// function onLoginBtnClick() {
+//   // console.dir(loginInput.value);
+//   // console.log("click!!!!");
+//   const username = loginInput.value;
+//   // if (username === "") {
+//   //   alert("Please write your name");
+//   // } else if (username.length > 15) {
+//   //   alert("Your name is too long.");
+//   // }
+//   console.log(username);
+// }
+// loginButton.addEventListener("click", onLoginBtnClick);
+
+function onLoginSubmit(event) {
+  event.preventDefault(); //기본행동 막기
+  //const username = loginInput.value;
+  //console.log(event);
+  console.log(loginInput.value);
 }
-loginButton.addEventListener("click", onLoginBtnClick);
+
+function handleLinkClick(event) {
+  event.preventDefault();
+  console.dir(event);
+  alert("clicked!");
+}
+
+loginForm.addEventListener("submit", onLoginSubmit);
+// onLoginSubmit(info)
+link.addEventListener("click", handleLinkClick);
